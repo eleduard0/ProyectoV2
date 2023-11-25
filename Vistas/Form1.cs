@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoV2.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,12 +22,21 @@ namespace ProyectoV2
         {
             CatalogoArreglo catalogoArreglo = new CatalogoArreglo();
             catalogoArreglo.Show();
+            this.Hide();
 
         }
+        
 
         private void button1_MouseHover(object sender, EventArgs e)
         {
             button1.BackColor = SystemColors.Control;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CatalogoListas catalogoListas = new CatalogoListas();
+            catalogoListas.Show();
+            this.Hide();
         }
     }
 }

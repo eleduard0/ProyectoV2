@@ -47,24 +47,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Bicicletas.cs" />
-    <Compile Include="CatalogoArreglo.cs">
+    <Compile Include="Vistas\AgregarBici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoArreglo.Designer.cs">
+    <Compile Include="Vistas\AgregarBici.Designer.cs">
+      <DependentUpon>AgregarBici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CatalogoArreglo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CatalogoArreglo.Designer.cs">
       <DependentUpon>CatalogoArreglo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Vistas\CatalogoListas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Vistas\CatalogoListas.Designer.cs">
+      <DependentUpon>CatalogoListas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CatalogoArreglo.resx">
+    <EmbeddedResource Include="Vistas\AgregarBici.resx">
+      <DependentUpon>AgregarBici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CatalogoArreglo.resx">
       <DependentUpon>CatalogoArreglo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Vistas\CatalogoListas.resx">
+      <DependentUpon>CatalogoListas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
