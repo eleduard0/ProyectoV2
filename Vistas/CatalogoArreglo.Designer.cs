@@ -32,6 +32,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.agregarBici = new System.Windows.Forms.Button();
             this.volverButton = new System.Windows.Forms.Button();
+            this.eliminarBiciA = new System.Windows.Forms.Button();
+            this.editarBiciA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,12 +52,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(29, 63);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(468, 115);
+            this.dataGridView1.Size = new System.Drawing.Size(468, 232);
             this.dataGridView1.TabIndex = 1;
             // 
             // agregarBici
             // 
-            this.agregarBici.Location = new System.Drawing.Point(29, 195);
+            this.agregarBici.Location = new System.Drawing.Point(29, 301);
             this.agregarBici.Name = "agregarBici";
             this.agregarBici.Size = new System.Drawing.Size(151, 23);
             this.agregarBici.TabIndex = 2;
@@ -73,11 +75,33 @@
             this.volverButton.UseVisualStyleBackColor = true;
             this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
             // 
+            // eliminarBiciA
+            // 
+            this.eliminarBiciA.Location = new System.Drawing.Point(200, 301);
+            this.eliminarBiciA.Name = "eliminarBiciA";
+            this.eliminarBiciA.Size = new System.Drawing.Size(75, 23);
+            this.eliminarBiciA.TabIndex = 4;
+            this.eliminarBiciA.Text = "Eliminar";
+            this.eliminarBiciA.UseVisualStyleBackColor = true;
+            this.eliminarBiciA.Click += new System.EventHandler(this.eliminarBiciA_Click);
+            // 
+            // editarBiciA
+            // 
+            this.editarBiciA.Location = new System.Drawing.Point(306, 301);
+            this.editarBiciA.Name = "editarBiciA";
+            this.editarBiciA.Size = new System.Drawing.Size(75, 23);
+            this.editarBiciA.TabIndex = 5;
+            this.editarBiciA.Text = "Editar";
+            this.editarBiciA.UseVisualStyleBackColor = true;
+            this.editarBiciA.Click += new System.EventHandler(this.editarBiciA_Click);
+            // 
             // CatalogoArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 519);
+            this.Controls.Add(this.editarBiciA);
+            this.Controls.Add(this.eliminarBiciA);
             this.Controls.Add(this.volverButton);
             this.Controls.Add(this.agregarBici);
             this.Controls.Add(this.dataGridView1);
@@ -97,5 +121,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button agregarBici;
         private System.Windows.Forms.Button volverButton;
+        private System.Windows.Forms.Button eliminarBiciA;
+        private System.Windows.Forms.Button editarBiciA;
     }
 }

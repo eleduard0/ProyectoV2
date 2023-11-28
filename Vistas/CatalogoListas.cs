@@ -79,7 +79,7 @@ namespace ProyectoV2.Vistas
 
         private void volverButton_Click_1(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Inicio form = new Inicio();
             this.Close();
             form.ShowDialog();
         }

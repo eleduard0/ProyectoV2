@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace ProyectoV2
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void IrArreglos_Click(object sender, EventArgs e)
         {
             CatalogoArreglo catalogoArreglo = new CatalogoArreglo();
             catalogoArreglo.Show();
@@ -27,10 +27,10 @@ namespace ProyectoV2
         }
         
 
-        private void button1_MouseHover(object sender, EventArgs e)
+        /*private void button1_MouseHover(object sender, EventArgs e)
         {
-            button1.BackColor = SystemColors.Control;
-        }
+            IrArreglos.BackColor = SystemColors.Control;
+        }*/
 
         private void button2_Click(object sender, EventArgs e)
         {
