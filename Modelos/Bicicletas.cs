@@ -10,7 +10,7 @@ namespace ProyectoV2
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Tamaño { get; set;}
-        public string Talla { get; set;}
+        public string Tamaño { get; set; }
+        public double Talla { get; set; }
     }
 }

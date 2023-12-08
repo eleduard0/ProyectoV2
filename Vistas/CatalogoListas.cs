@@ -67,9 +67,9 @@ namespace ProyectoV2.Vistas
         public void AgregarBicisAuto()
         {
             Lista lista = new Lista();
-            lista.Insertar(new Bicicletas { Id = 1, Nombre = "V10", Tamaño = "M", Talla = "29\"" });
-            lista.Insertar(new Bicicletas { Id = 2, Nombre = "Megatower", Tamaño = "XL", Talla = "29\"" });
-            lista.Insertar(new Bicicletas { Id = 3, Nombre = "Bullit", Tamaño = "L", Talla = "27\"" });
+            lista.Insertar(new Bicicletas { Id = 1, Nombre = "V10", Tamaño = "M", Talla = 29  });
+            lista.Insertar(new Bicicletas { Id = 2, Nombre = "Megatower", Tamaño = "XL", Talla = 29 });
+            lista.Insertar(new Bicicletas { Id = 3, Nombre = "Bullit", Tamaño = "L", Talla = 27 });
 
             // Convierte la lista en IEnumerable utilizando el método ObtenerBicicletas
             dataGridView1.AutoGenerateColumns = true;

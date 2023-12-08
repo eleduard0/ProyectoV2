@@ -46,17 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackendArreglos\Arreglos.cs" />
+    <Compile Include="BackendColas\Colas.cs" />
+    <Compile Include="BackendPila\Pilas.cs" />
     <Compile Include="Modelos\Bicicletas.cs" />
-    <Compile Include="Vistas\AgregarBici.cs">
+    <Compile Include="Vistas\VistasArreglo\AgregarBici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\AgregarBici.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\AgregarBici.Designer.cs">
       <DependentUpon>AgregarBici.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\CatalogoArreglo.cs">
+    <Compile Include="Vistas\VistasArreglo\CatalogoArreglo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\CatalogoArreglo.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\CatalogoArreglo.Designer.cs">
       <DependentUpon>CatalogoArreglo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\CatalogoListas.cs">
@@ -65,42 +68,72 @@
     <Compile Include="Vistas\CatalogoListas.Designer.cs">
       <DependentUpon>CatalogoListas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\EditarBiciArreglos.cs">
+    <Compile Include="Vistas\VistasArreglo\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\EditarBiciArreglos.Designer.cs">
-      <DependentUpon>EditarBiciArreglos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\EliminarBiciArreglo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\EliminarBiciArreglo.Designer.cs">
-      <DependentUpon>EliminarBiciArreglo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\Inicio.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Vistas\AgregarBici.resx">
+    <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.Designer.cs">
+      <DependentUpon>OrdenandoMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasArreglo\VistaLongitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasArreglo\VistaLongitud.Designer.cs">
+      <DependentUpon>VistaLongitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\AgregarACola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\AgregarACola.Designer.cs">
+      <DependentUpon>AgregarACola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\CatalogoColas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\CatalogoColas.Designer.cs">
+      <DependentUpon>CatalogoColas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\TamañoColas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasColas\TamañoColas.Designer.cs">
+      <DependentUpon>TamañoColas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\AgregarBici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\AgregarBici.Designer.cs">
+      <DependentUpon>AgregarBici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\CatalogoPilas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\CatalogoPilas.Designer.cs">
+      <DependentUpon>CatalogoPilas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\TamañoPilas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasPilas\TamañoPilas.Designer.cs">
+      <DependentUpon>TamañoPilas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\VistasArreglo\AgregarBici.resx">
       <DependentUpon>AgregarBici.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\CatalogoArreglo.resx">
+    <EmbeddedResource Include="Vistas\VistasArreglo\CatalogoArreglo.resx">
       <DependentUpon>CatalogoArreglo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\CatalogoListas.resx">
       <DependentUpon>CatalogoListas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\EditarBiciArreglos.resx">
-      <DependentUpon>EditarBiciArreglos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\EliminarBiciArreglo.resx">
-      <DependentUpon>EliminarBiciArreglo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Inicio.resx">
+    <EmbeddedResource Include="Vistas\VistasArreglo\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -112,6 +145,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\VistasArreglo\OrdenandoMensaje.resx">
+      <DependentUpon>OrdenandoMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasArreglo\VistaLongitud.resx">
+      <DependentUpon>VistaLongitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasColas\AgregarACola.resx">
+      <DependentUpon>AgregarACola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasColas\CatalogoColas.resx">
+      <DependentUpon>CatalogoColas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasColas\TamañoColas.resx">
+      <DependentUpon>TamañoColas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasPilas\AgregarBici.resx">
+      <DependentUpon>AgregarBici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasPilas\CatalogoPilas.resx">
+      <DependentUpon>CatalogoPilas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasPilas\TamañoPilas.resx">
+      <DependentUpon>TamañoPilas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
