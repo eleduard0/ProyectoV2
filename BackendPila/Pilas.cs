@@ -74,11 +74,10 @@ namespace ProyectoV2.BackendPila
 
         public void EliminarBicicleta(int id)
         {
-            // Crear una pila auxiliar para almacenar temporalmente las bicicletas
+            
             Bicicletas[] pilaAuxiliar = new Bicicletas[TamañoMaximo];
             int indiceAuxiliar = 0;
 
-            // Extraer bicicletas de la pila original a la pila auxiliar, omitiendo la que se quiere eliminar
             while (Cabeza >= 0)
             {
                 Bicicletas bicicletaActual = Extraer();
@@ -88,7 +87,6 @@ namespace ProyectoV2.BackendPila
                 }
             }
 
-            // Restaurar las bicicletas a la pila original desde la pila auxiliar
             for (int i = indiceAuxiliar - 1; i >= 0; i--)
             {
                 Insertar(pilaAuxiliar[i]);
@@ -97,11 +95,9 @@ namespace ProyectoV2.BackendPila
 
         public void EditarBicicleta(int id, Bicicletas nuevaBicicleta)
         {
-            // Crear una pila auxiliar para almacenar temporalmente las bicicletas
             Bicicletas[] pilaAuxiliar = new Bicicletas[TamañoMaximo];
             int indiceAuxiliar = 0;
 
-            // Extraer bicicletas de la pila original a la pila auxiliar, editando la que se quiere cambiar
             while (Cabeza >= 0)
             {
                 Bicicletas bicicletaActual = Extraer();
@@ -115,7 +111,6 @@ namespace ProyectoV2.BackendPila
                 }
             }
 
-            // Restaurar las bicicletas a la pila original desde la pila auxiliar
             for (int i = indiceAuxiliar - 1; i >= 0; i--)
             {
                 Insertar(pilaAuxiliar[i]);

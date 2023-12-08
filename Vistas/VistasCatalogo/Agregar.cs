@@ -56,7 +56,7 @@ namespace ProyectoV2.Vistas.VistasCatalogo
                 editBicicleta.Nombre = txtNombre.Text;
                 editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 editBicicleta.Tamaño = cmbTamaño.Text;
-                //listaEnlazada.EditarBicicleta(editBicicleta);
+                listaEnlazada.EditarBicicleta(editBicicleta);
                 this.Close();
                 return;
 
@@ -98,7 +98,7 @@ namespace ProyectoV2.Vistas.VistasCatalogo
                 editBicicleta.Nombre = txtNombre.Text;
                 editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 editBicicleta.Tamaño = cmbTamaño.Text;
-                //listaEnlazada.EditarBicicleta(editBicicleta);
+                listaEnlazada.EditarBicicleta(editBicicleta);
                 this.Close();
                 return;
 
@@ -137,7 +137,7 @@ namespace ProyectoV2.Vistas.VistasCatalogo
                 editBicicleta.Nombre = txtNombre.Text;
                 editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 editBicicleta.Tamaño = cmbTamaño.Text;
-                //listaEnlazada.EditarBicicleta(editBicicleta);
+                listaEnlazada.EditarBicicleta(editBicicleta);
                 this.Close();
                 return;
 

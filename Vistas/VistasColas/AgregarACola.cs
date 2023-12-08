@@ -71,7 +71,7 @@ namespace ProyectoV2.Vistas.VistasColas
         }
         private void ActualizarBicicletaExistente()
         {
-            // Actualizar la bicicleta existente con los nuevos valores
+            
             editBicicleta.Nombre = txtNombre.Text;
             editBicicleta.Talla = double.Parse(cmbTalla.Text);
             editBicicleta.Tamaño = cmbTamaño.Text;

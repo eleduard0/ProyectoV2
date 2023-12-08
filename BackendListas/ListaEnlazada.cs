@@ -45,7 +45,7 @@ namespace ProyectoV2.BackendListas
             return nodoActual;
         }
 
-        
+
 
 
         public Bicicletas[] ObtenerListaEnlazadaBicicletas()
@@ -124,7 +124,7 @@ namespace ProyectoV2.BackendListas
 
         }
 
-      
+
 
         public void AgregarAlMedio(Bicicletas bicicleta)
         {
@@ -132,7 +132,7 @@ namespace ProyectoV2.BackendListas
 
             if (primerNodo == null)
             {
-                
+
                 AgregarAlInicio(bicicleta);
                 return;
             }
@@ -148,11 +148,11 @@ namespace ProyectoV2.BackendListas
                 nodoLento = nodoLento._Siguiente;
             }
 
-           
+
             nuevoNodo._Siguiente = nodoLento;
 
             if (nodoAnterior != null)
-            { 
+            {
                 nodoAnterior._Siguiente = nuevoNodo;
             }
             else
@@ -226,7 +226,7 @@ namespace ProyectoV2.BackendListas
                 {
                     if (nodoActual._Bicicleta.Talla > nodoSiguiente._Bicicleta.Talla)
                     {
-                        
+
                         Bicicletas tempBicicleta = nodoActual._Bicicleta;
                         nodoActual._Bicicleta = nodoSiguiente._Bicicleta;
                         nodoSiguiente._Bicicleta = tempBicicleta;
@@ -256,7 +256,7 @@ namespace ProyectoV2.BackendListas
                 {
                     if (nodoActual._Bicicleta.Talla < nodoSiguiente._Bicicleta.Talla)
                     {
-                        
+
                         Bicicletas tempBicicleta = nodoActual._Bicicleta;
                         nodoActual._Bicicleta = nodoSiguiente._Bicicleta;
                         nodoSiguiente._Bicicleta = tempBicicleta;
@@ -270,6 +270,33 @@ namespace ProyectoV2.BackendListas
 
             } while (intercambio);
         }
+
+        public void EditarBicicleta(Bicicletas bicicleta)
+        {
+            if (bicicleta == null)
+            {
+                return;
+            }
+
+            Nodo nodoActual = primerNodo;
+
+            while (nodoActual != null && nodoActual._Bicicleta != bicicleta)
+            {
+                nodoActual = nodoActual._Siguiente;
+            }
+
+            if (nodoActual == null)
+            {
+                Console.WriteLine("No existe esa bicicleta a editar!");
+                return;
+            }
+
+            
+            nodoActual._Bicicleta.Nombre = bicicleta.Nombre;
+            nodoActual._Bicicleta.Talla = bicicleta.Talla;
+            nodoActual._Bicicleta.Tamaño = bicicleta.Tamaño;
+        }
+
 
 
 

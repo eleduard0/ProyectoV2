@@ -21,7 +21,7 @@ namespace ProyectoV2.Vistas.VistasPilas
 
             if (editBicicleta != null)
             {
-                // Si se está editando, establecer los valores actuales en los controles
+                
                 txtNombre.Text = editBicicleta.Nombre;
                 cmbTalla.Text = editBicicleta.Talla.ToString();
                 cmbTamaño.Text = editBicicleta.Tamaño;
@@ -32,28 +32,28 @@ namespace ProyectoV2.Vistas.VistasPilas
         {
             if (ValidarCampos())
             {
-                // Llenar los datos de la nueva bicicleta
+                
                 nuevaBicicleta.Id = ObtenerID();
                 nuevaBicicleta.Nombre = txtNombre.Text;
                 nuevaBicicleta.Talla = double.Parse(cmbTalla.Text);
                 nuevaBicicleta.Tamaño = cmbTamaño.Text;
 
-                // Insertar o actualizar la bicicleta en la pila
+                
                 if (editBicicleta == null)
                 {
-                    // Agregar una nueva bicicleta
+                    
                     pilas.Insertar(nuevaBicicleta);
                 }
                 else
                 {
-                    // Actualizar la bicicleta existente
+                    
                     ActualizarBicicletaExistente();
                 }
 
-                // Actualizar el DataGridView en el formulario CatalogoPilas
+                
                 catalogoPilas.ActualizarGridView();
 
-                // Cerrar el formulario actual y mostrar el formulario CatalogoPilas
+                
                 this.Close();
                 catalogoPilas.Show();
             }
@@ -76,7 +76,7 @@ namespace ProyectoV2.Vistas.VistasPilas
 
         private void ActualizarBicicletaExistente()
         {
-            // Actualizar la bicicleta existente con los nuevos valores
+            
             editBicicleta.Nombre = txtNombre.Text;
             editBicicleta.Talla = double.Parse(cmbTalla.Text);
             editBicicleta.Tamaño = cmbTamaño.Text;

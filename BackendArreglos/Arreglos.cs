@@ -60,7 +60,7 @@ namespace ProyectoV2.BackendArreglos
         {
             if (!ArregloLleno())
             {
-                int posicion = cantidadBicis / 2; // Calcular la mitad del arreglo
+                int posicion = cantidadBicis / 2; 
                 for (int i = arreglobicis.Length - 1; i > posicion; i--)
                 {
                     if (arreglobicis[i - 1] != null)
@@ -162,7 +162,7 @@ namespace ProyectoV2.BackendArreglos
                 {
                     if (arreglobicis[j].Talla > arreglobicis[j + 1].Talla)
                     {
-                        // Intercambia los elementos si están en el orden incorrecto
+                        
                         Bicicletas temp = arreglobicis[j];
                         arreglobicis[j] = arreglobicis[j + 1];
                         arreglobicis[j + 1] = temp;
@@ -180,7 +180,7 @@ namespace ProyectoV2.BackendArreglos
                 {
                     if (arreglobicis[j].Talla < arreglobicis[j + 1].Talla)
                     {
-                        // Intercambia los elementos si están en el orden incorrecto
+                        
                         Bicicletas temp = arreglobicis[j];
                         arreglobicis[j] = arreglobicis[j + 1];
                         arreglobicis[j + 1] = temp;
