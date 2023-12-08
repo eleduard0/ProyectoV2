@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoV2.BackendArreglos;
+using ProyectoV2.BackendListas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,71 +9,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoV2.BackendArreglos;
-using ProyectoV2.Vistas;
 
-namespace ProyectoV2.Vistas
+namespace ProyectoV2.Vistas.VistasCatalogo
 {
-    public partial class AgregarBici : Form
+    public partial class Agregar : Form
     {
         private Bicicletas editBicicleta;
         private Bicicletas nuevaBicicleta;
-        private Arreglos arreglos;
-        private CatalogoArreglo catalogoArreglo;
+        private ListaEnlazada listaEnlazada;
+        private CategolodeListas catalogoListas;
 
-
-        public AgregarBici(Arreglos arreglos, CatalogoArreglo catalogoArreglo, Bicicletas bicixd )
+        public Agregar(CategolodeListas catalogo, ListaEnlazada lista, Bicicletas bicixd)
         {
             InitializeComponent();
-            this.arreglos = arreglos;
-            this.catalogoArreglo = catalogoArreglo;
+            catalogoListas = catalogo;
+            listaEnlazada = lista;
             nuevaBicicleta = new Bicicletas();
             editBicicleta = bicixd;
 
+
         }
 
-
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void Agregar_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(cmbTamaño.Text) || string.IsNullOrWhiteSpace(cmbTalla.Text))
-            {
-                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (editBicicleta != null)
-            {
-
-
-
-                editBicicleta.Nombre = txtNombre.Text;
-                editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
-                editBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.EditarBicicleta(editBicicleta);
-                this.Close();
-                return;
-
-            }
-
-            try
-            {
-                nuevaBicicleta.Id = ObtenerID();
-                nuevaBicicleta.Nombre = txtNombre.Text;
-                nuevaBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
-                nuevaBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.AgregarBicis(nuevaBicicleta);
-
-                catalogoArreglo.ActualizarDataGridView();
-                this.Close();
-                catalogoArreglo.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al agregar la bicicleta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
+        private int ObtenerID()
+        {
+            return listaEnlazada.ObtenerUltimoID() + 1;
+        }
+
+        // AGREGAR AL INICIOOO
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(cmbTamaño.Text) || string.IsNullOrWhiteSpace(cmbTalla.Text))
@@ -87,7 +56,7 @@ namespace ProyectoV2.Vistas
                 editBicicleta.Nombre = txtNombre.Text;
                 editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 editBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.EditarBicicleta(editBicicleta);
+                //listaEnlazada.EditarBicicleta(editBicicleta);
                 this.Close();
                 return;
 
@@ -99,18 +68,21 @@ namespace ProyectoV2.Vistas
                 nuevaBicicleta.Nombre = txtNombre.Text;
                 nuevaBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 nuevaBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.AgregarBicisAlInicio(nuevaBicicleta);
+                listaEnlazada.AgregarAlInicio(nuevaBicicleta);
 
-                catalogoArreglo.ActualizarDataGridView();
+                catalogoListas.ActualizarDataGridView();
                 this.Close();
-                catalogoArreglo.Show();
+                catalogoListas.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al agregar la bicicleta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
 
+
+        /// AGREGAR AL MEDIOOOOO
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(cmbTamaño.Text) || string.IsNullOrWhiteSpace(cmbTalla.Text))
@@ -126,7 +98,7 @@ namespace ProyectoV2.Vistas
                 editBicicleta.Nombre = txtNombre.Text;
                 editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 editBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.EditarBicicleta(editBicicleta);
+                //listaEnlazada.EditarBicicleta(editBicicleta);
                 this.Close();
                 return;
 
@@ -138,45 +110,55 @@ namespace ProyectoV2.Vistas
                 nuevaBicicleta.Nombre = txtNombre.Text;
                 nuevaBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
                 nuevaBicicleta.Tamaño = cmbTamaño.Text;
-                arreglos.AgregarBicisAlMedio(nuevaBicicleta);
+                listaEnlazada.AgregarAlMedio(nuevaBicicleta);
 
-                catalogoArreglo.ActualizarDataGridView();
+                catalogoListas.ActualizarDataGridView();
                 this.Close();
-                catalogoArreglo.Show();
+                catalogoListas.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al agregar la bicicleta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        private int ObtenerID()
+        /// AGREGAR AL FINAL
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            return arreglos.ObtenerUltimoID() + 1;
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(cmbTamaño.Text) || string.IsNullOrWhiteSpace(cmbTalla.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (editBicicleta != null)
+            {
+
+
+
+                editBicicleta.Nombre = txtNombre.Text;
+                editBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
+                editBicicleta.Tamaño = cmbTamaño.Text;
+                //listaEnlazada.EditarBicicleta(editBicicleta);
+                this.Close();
+                return;
+
+            }
+
+            try
+            {
+                nuevaBicicleta.Id = ObtenerID();
+                nuevaBicicleta.Nombre = txtNombre.Text;
+                nuevaBicicleta.Talla = Convert.ToDouble(cmbTalla.Text);
+                nuevaBicicleta.Tamaño = cmbTamaño.Text;
+                listaEnlazada.AgregarAlFinal(nuevaBicicleta);
+
+                catalogoListas.ActualizarDataGridView();
+                this.Close();
+                catalogoListas.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar la bicicleta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void AgregarBici_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void volverButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            catalogoArreglo.Show();
-        }
-
-        private void cmbTalla_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

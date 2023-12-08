@@ -1,6 +1,5 @@
 ﻿using ProyectoV2.BackendArreglos;
 using ProyectoV2.Vistas;
-using ProyectoV2.Vistas.VistasPilas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +10,9 @@ using System.Text;
 using ProyectoV2.Vistas.VistasArreglo;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoV2.BackendListas;
+using ProyectoV2.Vistas.VistasCatalogo;
+using ProyectoV2.Vistas.VistasPilas;
 using ProyectoV2.Vistas.VistasColas;
 
 namespace ProyectoV2
@@ -44,8 +46,9 @@ namespace ProyectoV2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CatalogoListas catalogoListas = new CatalogoListas();
-            catalogoListas.Show();
+           ListaEnlazada listaEnlazada = new ListaEnlazada();
+           CategolodeListas catalogo = new CategolodeListas(listaEnlazada);
+           catalogo.Show();
             this.Hide();
 
 

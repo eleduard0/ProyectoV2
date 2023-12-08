@@ -1,9 +1,10 @@
 ﻿using ProyectoV2.BackendArreglos;
 using ProyectoV2.Vistas;
-using ProyectoV2.Vistas.VistasArreglo;
 using System;
 using System.Linq;
+using ProyectoV2.Vistas;
 using System.Windows.Forms;
+using ProyectoV2.Vistas.VistasArreglo;
 
 namespace ProyectoV2
 {
@@ -84,24 +85,36 @@ namespace ProyectoV2
         {
             if (arreglos.ArregloVacio())
             {
-                MessageBox.Show("El arreglo esta vació!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El arreglo está vacío!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
 
-                Bicicletas bicicletaSeleccionada = (Bicicletas)dataGridView1.Rows[rowIndex].DataBoundItem;
+                if (rowIndex >= 0 && rowIndex < dataGridView1.Rows.Count)
+                {
+                    Bicicletas bicicletaSeleccionada = (Bicicletas)dataGridView1.Rows[rowIndex].DataBoundItem;
 
-                AgregarBici agregarBici = new AgregarBici(arreglos, this, bicicletaSeleccionada);
-                this.Hide();
+                    AgregarBici agregarBici = new AgregarBici(arreglos, this, bicicletaSeleccionada);
+                    this.Hide();
 
+                    agregarBici.FormClosed += AgregarBici_FormClosed;
 
-                agregarBici.FormClosed += AgregarBici_FormClosed;
-
-                agregarBici.Show();
+                    agregarBici.Show();
+                }
+                else
+                {
+                    MessageBox.Show("La fila seleccionada no es válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No seleccionaste ninguna bici!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
 
         private void AgregarBici_FormClosed(object sender, FormClosedEventArgs e)
@@ -203,7 +216,7 @@ namespace ProyectoV2
                 return;
             }
             BicisBusqueda();
-
+ 
         }
 
         public void BicisBusqueda()
@@ -212,6 +225,6 @@ namespace ProyectoV2
             dataGridView1.DataSource = arreglos.Buscar(txtBuscaar.Text);
         }
 
-
+        
     }
 }

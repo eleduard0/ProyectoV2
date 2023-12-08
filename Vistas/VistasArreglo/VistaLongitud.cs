@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoV2.Vistas.VistasArreglo;
 using System.Windows.Forms;
 
 namespace ProyectoV2.Vistas.VistasArreglo

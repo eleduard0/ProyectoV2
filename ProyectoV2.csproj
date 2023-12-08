@@ -48,8 +48,18 @@
   <ItemGroup>
     <Compile Include="BackendArreglos\Arreglos.cs" />
     <Compile Include="BackendColas\Colas.cs" />
+    <Compile Include="BackendListas\ListaEnlazada.cs" />
+    <Compile Include="BackendListas\Nodo.cs" />
     <Compile Include="BackendPila\Pilas.cs" />
     <Compile Include="Modelos\Bicicletas.cs" />
+    <Compile Include="Vistas\CatalogoListas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CatalogoListas.Designer.cs">
+      <DependentUpon>CatalogoListas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\VistasArreglo\AgregarBici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,20 +72,12 @@
     <Compile Include="Vistas\VistasArreglo\CatalogoArreglo.Designer.cs">
       <DependentUpon>CatalogoArreglo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\CatalogoListas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\CatalogoListas.Designer.cs">
-      <DependentUpon>CatalogoListas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\VistasArreglo\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\VistasArreglo\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +89,18 @@
     </Compile>
     <Compile Include="Vistas\VistasArreglo\VistaLongitud.Designer.cs">
       <DependentUpon>VistaLongitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCatalogo\Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasCatalogo\Agregar.Designer.cs">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCatalogo\CategolodeListas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistasCatalogo\CategolodeListas.Designer.cs">
+      <DependentUpon>CategolodeListas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasColas\AgregarACola.cs">
       <SubType>Form</SubType>
@@ -124,17 +138,8 @@
     <Compile Include="Vistas\VistasPilas\TamañoPilas.Designer.cs">
       <DependentUpon>TamañoPilas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vistas\VistasArreglo\AgregarBici.resx">
-      <DependentUpon>AgregarBici.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\VistasArreglo\CatalogoArreglo.resx">
-      <DependentUpon>CatalogoArreglo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\CatalogoListas.resx">
       <DependentUpon>CatalogoListas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\VistasArreglo\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,11 +150,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\VistasArreglo\AgregarBici.resx">
+      <DependentUpon>AgregarBici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasArreglo\CatalogoArreglo.resx">
+      <DependentUpon>CatalogoArreglo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasArreglo\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VistasArreglo\OrdenandoMensaje.resx">
       <DependentUpon>OrdenandoMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VistasArreglo\VistaLongitud.resx">
       <DependentUpon>VistaLongitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasCatalogo\Agregar.resx">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistasCatalogo\CategolodeListas.resx">
+      <DependentUpon>CategolodeListas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VistasColas\AgregarACola.resx">
       <DependentUpon>AgregarACola.cs</DependentUpon>

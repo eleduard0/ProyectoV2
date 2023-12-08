@@ -12,16 +12,28 @@ namespace ProyectoV2.Vistas.VistasArreglo
 {
     public partial class OrdenandoMensaje : Form
     {
-        CatalogoArreglo catalogo;
+        CatalogoArreglo catalogoxd;
         public OrdenandoMensaje(CatalogoArreglo catalogo)
         {
             InitializeComponent();
-            this.catalogo = catalogo;
+            catalogoxd = catalogo;
         }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            catalogo.Show();
+            catalogoxd.Show();
             this.Hide();
+           
+        }
+
+        private void OrdenandoMensaje_Load(object sender, EventArgs e)
+        {
 
         }
     }
