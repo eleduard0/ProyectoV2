@@ -63,7 +63,7 @@
     <Compile Include="Vistas\VistasArreglo\AgregarBici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\VistasArreglo\AgregarBici.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\AgregarBici.designer.cs">
       <DependentUpon>AgregarBici.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasArreglo\CatalogoArreglo.cs">
@@ -81,13 +81,13 @@
     <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\OrdenandoMensaje.designer.cs">
       <DependentUpon>OrdenandoMensaje.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasArreglo\VistaLongitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\VistasArreglo\VistaLongitud.Designer.cs">
+    <Compile Include="Vistas\VistasArreglo\VistaLongitud.designer.cs">
       <DependentUpon>VistaLongitud.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasCatalogo\Agregar.cs">

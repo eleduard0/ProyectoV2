@@ -9,14 +9,14 @@ namespace ProyectoV2.BackendCola
 
         private int CantidadBicis { get; set; }
         public int TamañoMaximo { get; }
-        private Bicicletas[] Bicicletas { get; }
+        private Bicicletas[] BicicletasArray { get; }
         private int Frente { get; set; }
         private int Posterior { get; set; }
 
         public Colas(int tamañoMaximo)
         {
             this.TamañoMaximo = tamañoMaximo;
-            this.Bicicletas = new Bicicletas[tamañoMaximo];
+            this.BicicletasArray = new Bicicletas[tamañoMaximo];
             this.Frente = 0;
             this.Posterior = -1;
         }
@@ -31,8 +31,21 @@ namespace ProyectoV2.BackendCola
             }
 
             Posterior = (Posterior + 1) % TamañoMaximo;
-            Bicicletas[Posterior] = bicicleta;
+            BicicletasArray[Posterior] = bicicleta;
             CantidadBicis++;
+        }
+
+        public Bicicletas Extraer()
+        {
+            if (CantidadBicis == 0)
+            {
+                throw new InvalidOperationException(ColaVaciaMensaje);
+            }
+
+            Bicicletas bicicletaExtraida = BicicletasArray[Frente];
+            Frente = (Frente + 1) % TamañoMaximo;
+            CantidadBicis--;
+            return bicicletaExtraida;
         }
 
         public Bicicletas[] ObtenerArregloBicicletas()
@@ -43,7 +56,7 @@ namespace ProyectoV2.BackendCola
 
             while (indice < CantidadBicis)
             {
-                arreglo[indice++] = Bicicletas[i];
+                arreglo[indice++] = BicicletasArray[i];
                 i = (i + 1) % TamañoMaximo;
             }
 
@@ -55,7 +68,7 @@ namespace ProyectoV2.BackendCola
             if (CantidadBicis > 0)
             {
                 int indiceUltimo = (Posterior - 1 + TamañoMaximo) % TamañoMaximo;
-                return Bicicletas[indiceUltimo]?.Id ?? 0;
+                return BicicletasArray[indiceUltimo]?.Id ?? 0;
             }
             else
             {
@@ -83,10 +96,7 @@ namespace ProyectoV2.BackendCola
 
             while (CantidadBicis > 0)
             {
-                Bicicletas bicicletaActual = Bicicletas[Frente];
-                Frente = (Frente + 1) % TamañoMaximo;
-                CantidadBicis--;
-
+                Bicicletas bicicletaActual = Extraer();
                 if (bicicletaActual.Id != id)
                 {
                     colaAuxiliar[indiceAuxiliar++] = bicicletaActual;
@@ -109,10 +119,7 @@ namespace ProyectoV2.BackendCola
 
             while (CantidadBicis > 0)
             {
-                Bicicletas bicicletaActual = Bicicletas[Frente];
-                Frente = (Frente + 1) % TamañoMaximo;
-                CantidadBicis--;
-
+                Bicicletas bicicletaActual = Extraer();
                 if (bicicletaActual.Id == id)
                 {
                     colaAuxiliar[indiceAuxiliar++] = nuevaBicicleta;
